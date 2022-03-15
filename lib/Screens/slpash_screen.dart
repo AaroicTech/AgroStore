@@ -1,6 +1,6 @@
+import 'package:agro_store/Screens/Auth_screen/log_in.dart';
 import 'package:flutter/material.dart';
 
-import 'Bottom_nav_pages/Home_screen/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -8,10 +8,15 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(const  Duration(seconds: 3), () {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => LogInPage()));
     });
     return Scaffold(
-      body: Container(child: const CircularProgressIndicator()),
+      body: Container(
+        child: Center(
+          child: Image(image: AssetImage('assets/agro_store.png')),
+         
+          ),
+          ),
     );
   }
 }

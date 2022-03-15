@@ -12,10 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'AgroStore',
-      theme: ThemeData(      
-        primarySwatch: Colors.blue,
+      theme: ThemeData(
+        primarySwatch: Colors.green,
       ),
-    home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
