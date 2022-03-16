@@ -24,7 +24,6 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all()),
                   child: Container(
-                    decoration: BoxDecoration(),
                     child: Image.asset('assets/Frame 33575.png'),
                   ),
                 ),
@@ -36,12 +35,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Text(
                       'Product',
-                      //style: textStyle111
                     ),
                     const SizedBox(width: 245),
                     Text(
                       'See more',
-                      // style: textStyle117
                     ),
                   ],
                 ),

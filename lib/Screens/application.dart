@@ -1,24 +1,44 @@
+import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
-import '../../../Widget/drawer.dart';
+import '../Widget/drawer.dart';
+import '../Widget/appbar.dart';
 
-class ProfilePage extends StatelessWidget {
-  ProfilePage({Key? key}) : super(key: key);
+class Application extends StatelessWidget {
+  Application({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MainDrawer(),
+      appBar: appBar(
+         ),
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(top: 10),
           padding: const EdgeInsets.all(20),
           child: Center(
             child: Column(
               children: [
-                const CircleAvatar(
-                  radius: 60,
-                  backgroundImage:
-                      AssetImage('assets/unsplash_i2hoD-C2RUA.png'),
+                Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Application Number',
+                        style: textStyle0,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Container(
+                      child: Container(
+                        height: 40,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          border: Border.all(),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 10),
                 Column(
@@ -70,7 +90,7 @@ class ProfilePage extends StatelessWidget {
                     Container(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'Moble Number',
+                        'Moblie Number',
                         style: textStyle0,
                       ),
                     ),
@@ -125,6 +145,43 @@ class ProfilePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                           border: Border.all(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Content',
+                        style: textStyle0,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Container(
+                      child: Container(
+                        height: 100,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          border: Border.all(),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        color: primaryColor,
+                        height: 30,
+                        width: 60,
+                        child: Center(
+                          child: Text(
+                            'Submit',
+                            style: textStyle1,
+                          ),
                         ),
                       ),
                     ),

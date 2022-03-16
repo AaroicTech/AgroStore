@@ -18,7 +18,7 @@ class LogInPage extends StatelessWidget {
         child: Container(
           //color: white,
           margin: const EdgeInsets.only(top: 60),
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(30),
           child: Center(
             child: Column(
               children: [
@@ -63,7 +63,10 @@ class LogInPage extends StatelessWidget {
                 Container(
                   alignment: Alignment.bottomRight,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => CreateAccount()));
+                    },
                     child: Text(
                       'Forgot Passward?',
                       style: TextStyle(color: primaryColor),
@@ -72,7 +75,7 @@ class LogInPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 70),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => MainActivity()));
                   },

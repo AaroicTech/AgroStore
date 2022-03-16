@@ -22,3 +22,13 @@ final textStyle2 = TextStyle(
   color: primaryColor,
   fontSize: 12,
 ); 
+final textStyle3 = TextStyle(
+  fontWeight: FontWeight.w400,
+  color: white,
+  fontSize: 10,
+); 
+final textStyle4 = TextStyle(
+  fontWeight: FontWeight.w400,
+  color: black,
+  fontSize: 14,
+); 
