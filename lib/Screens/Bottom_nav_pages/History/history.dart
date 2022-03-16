@@ -1,14 +1,20 @@
 import 'package:agro_store/Screens/status.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
+import 'package:agro_store/Widget/appbar.dart';
 import 'package:flutter/material.dart';
 
 class HistoryPage extends StatelessWidget {
-  const HistoryPage({Key? key}) : super(key: key);
+  HistoryPage(this.path, {Key? key}) : super(key: key);
+
+  final String path;
 
   @override
   Widget build(BuildContext context) {
+    // print(path);
     return Scaffold(
+     
+      appBar: path == 'main' ? null : appBar(),
       body: Container(
         padding: const EdgeInsets.all(8.0),
         child: ListView(

@@ -4,15 +4,26 @@ import 'package:flutter/material.dart';
 import '../Widget/drawer.dart';
 import '../Widget/appbar.dart';
 
-class Application extends StatelessWidget {
+class Application extends StatefulWidget {
   Application({Key? key}) : super(key: key);
+
+  @override
+  State<Application> createState() => _ApplicationState();
+}
+
+class _ApplicationState extends State<Application> {
+  GlobalKey<ScaffoldState> key = GlobalKey();
+
+  void showDrawer() {
+    key.currentState!.openDrawer();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: key,
       drawer: const MainDrawer(),
-      appBar: appBar(
-         ),
+      appBar: appBar(onTap: showDrawer),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20),

@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (_) =>
-                                                      const ProductsScreen()));
+                                                       ProductsScreen()));
                                         },
                                         child: Card(
                                           child: Column(

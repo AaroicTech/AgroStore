@@ -1,15 +1,29 @@
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
+import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
 
-class ProductsDetail extends StatelessWidget {
-  const ProductsDetail({Key? key}) : super(key: key);
+class ProductsDetail extends StatefulWidget {
+  ProductsDetail({Key? key}) : super(key: key);
+
+  @override
+  State<ProductsDetail> createState() => _ProductsDetailState();
+}
+
+class _ProductsDetailState extends State<ProductsDetail> {
+  GlobalKey<ScaffoldState> key = GlobalKey();
+
+  void showDrawer() {
+    key.currentState!.openDrawer();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      drawer: const MainDrawer(),
+      key: key,
+      appBar: appBar(onTap: showDrawer),
       body: Container(
         padding: const EdgeInsets.all(8.0),
         child: Column(

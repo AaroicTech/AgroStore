@@ -1,9 +1,8 @@
 import 'package:agro_store/Screens/Bottom_nav_pages/History/history.dart';
 import 'package:agro_store/Screens/Bottom_nav_pages/Home_screen/home_screen.dart';
 import 'package:agro_store/Stlyes/colors.dart';
-import 'package:agro_store/Widget/appbar.dart';
+import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/drawer.dart';
-import 'package:flutter/services.dart';
 import '/Screens/Bottom_nav_pages/Profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'Bottom_nav_pages/Messages/messages.dart';
@@ -17,8 +16,8 @@ class MainActivity extends StatefulWidget {
 class _MainActivityState extends State<MainActivity> {
   final List<Widget> _pages = [
     HomePage(),
-    HistoryPage(),
-    Messages(),
+    HistoryPage('main'),
+    Messages('main'),
     ProfilePage(),
   ];
 
@@ -30,14 +29,60 @@ class _MainActivityState extends State<MainActivity> {
     key.currentState!.openDrawer();
   }
 
+  List<String> titles = [
+    'Home',
+    'History',
+    'Messages',
+    'Profile',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: key,
       drawer: const MainDrawer(),
-      appBar: appBar(onTap: () {
-        showDrawer();
-      }),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: showDrawer,
+          icon: Icon(
+            Icons.menu,
+            color: primaryColor,
+          ),
+        ),
+        centerTitle: _selectedPage == 0 ? false : true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: _selectedPage == 0
+            ? Container(
+                width: 100,
+                child: Image.asset('assets/agro_store.png'),
+              )
+            : Text(
+                titles[_selectedPage],
+                style: textStyle,
+              ),
+        actions: _selectedPage == 3
+            ? []
+            : [
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _selectedPage = 3;
+                    });
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      backgroundImage:
+                          AssetImage('assets/unsplash_i2hoD-C2RUA.png'),
+                    ),
+                  ),
+                ),
+              ],
+      ),
+      // appBar(onTap: () {
+      //   showDrawer();
+      // }
+      // ),
       body: _pages[_selectedPage],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {

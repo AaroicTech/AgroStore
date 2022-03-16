@@ -47,7 +47,7 @@ class MainDrawer extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) =>const ProductsScreen()));
+                                    builder: (_) => ProductsScreen()));
                           },
                           icon: const Icon(Icons.arrow_forward_ios),
                         ),
@@ -59,7 +59,7 @@ class MainDrawer extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) =>const HistoryPage()));
+                                    builder: (_) => HistoryPage('drawer')));
                           },
                           icon: const Icon(Icons.arrow_forward_ios),
                         ),
@@ -82,7 +82,7 @@ class MainDrawer extends StatelessWidget {
                           onPressed: () {Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => Messages()));},
+                                    builder: (_) => Messages('drawer')));},
                           icon: const Icon(Icons.arrow_forward_ios),
                         ),
                       ),

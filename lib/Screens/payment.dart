@@ -1,5 +1,6 @@
 import 'package:agro_store/Screens/application.dart';
 import 'package:agro_store/Widget/appbar.dart';
+import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
 import '../Stlyes/colors.dart';
 import '../Stlyes/fonts.dart';
@@ -12,10 +13,18 @@ class PaymentPage extends StatefulWidget {
 }
 
 class _PaymentPageState extends State<PaymentPage> {
+  GlobalKey<ScaffoldState> key = GlobalKey();
+
+  void showDrawer() {
+    key.currentState!.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      drawer: const MainDrawer(),
+      key: key,
+      appBar: appBar(onTap: showDrawer),
       body: ListView(
         padding: EdgeInsets.zero,
         children: [

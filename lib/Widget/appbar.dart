@@ -6,7 +6,7 @@ appBar({VoidCallback? onTap}) {
     leading: IconButton(
       onPressed: onTap,
       icon: Icon(
-        Icons.save,
+        Icons.menu,
         color: primaryColor,
       ),
     ),
@@ -16,10 +16,10 @@ appBar({VoidCallback? onTap}) {
       width: 100,
       child: Image.asset('assets/agro_store.png'),
     ),
-    actions:const [
+    actions: const [
       Padding(
-        padding:  EdgeInsets.all(8.0),
-        child:  CircleAvatar(
+        padding: EdgeInsets.all(8.0),
+        child: CircleAvatar(
           backgroundImage: AssetImage('assets/unsplash_i2hoD-C2RUA.png'),
         ),
       ),

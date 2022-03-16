@@ -7,14 +7,22 @@ import '../Widget/appbar.dart';
 class Compliant extends StatelessWidget {
   Compliant({Key? key}) : super(key: key);
 
+  GlobalKey<ScaffoldState> key = GlobalKey();
+
+  void showDrawer() {
+    key.currentState!.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
+      key: key,
       drawer: const MainDrawer(),
       appBar: appBar(
-       
-        
-      ),
+          onTap: showDrawer
+
+          ),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(top: 20),
