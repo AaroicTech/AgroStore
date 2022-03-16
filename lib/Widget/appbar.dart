@@ -16,10 +16,10 @@ appBar({VoidCallback? onTap}) {
       width: 100,
       child: Image.asset('assets/agro_store.png'),
     ),
-    actions: [
+    actions:const [
       Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: const CircleAvatar(
+        padding:  EdgeInsets.all(8.0),
+        child:  CircleAvatar(
           backgroundImage: AssetImage('assets/unsplash_i2hoD-C2RUA.png'),
         ),
       ),

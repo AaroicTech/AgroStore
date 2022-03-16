@@ -1,5 +1,4 @@
-import 'package:agro_store/Screens/Auth_screen/create_account.dart';
-import 'package:agro_store/Screens/Bottom_nav_pages/Home_screen/home_screen.dart';
+import 'package:agro_store/Screens/main_activity.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
@@ -105,9 +104,7 @@ class SignUp extends StatelessWidget {
                     Container(
                       height: 20,
                       width: 20,
-                      decoration: BoxDecoration(
-                        color: primaryColor,
-                      ),
+                      decoration: BoxDecoration(border: Border.all()),
                     ),
                     TextButton(
                       onPressed: () {},
@@ -143,8 +140,10 @@ class SignUp extends StatelessWidget {
                       const SizedBox(width: 10),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => HomePage()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => MainActivity()));
                         },
                         child: Container(
                           height: 35,

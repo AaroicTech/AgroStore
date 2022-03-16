@@ -16,7 +16,6 @@ class LogInPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          //color: white,
           margin: const EdgeInsets.only(top: 60),
           padding: const EdgeInsets.all(30),
           child: Center(
@@ -36,7 +35,7 @@ class LogInPage extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: Text(
                         'Email/Phone number',
-                        style: textStyle0,
+                        style: textStyle5,
                       ),
                     ),
                     Container(
@@ -51,7 +50,7 @@ class LogInPage extends StatelessWidget {
                   children: [
                     Container(
                       alignment: Alignment.topLeft,
-                      child: Text('Passward', style: textStyle0),
+                      child: Text('Passward', style: textStyle5),
                     ),
                     Container(
                       child: TextFormField(
@@ -102,9 +101,7 @@ class LogInPage extends StatelessWidget {
                   child: RichText(
                     text: TextSpan(
                       text: 'Dont have an account?  ',
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
+                      style: textStyle0,
                       children: <TextSpan>[
                         TextSpan(
                           text: 'REGISTER NOW',

@@ -1,3 +1,4 @@
+import 'package:agro_store/Screens/Products/product_detail.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
@@ -21,26 +22,20 @@ class ProductsScreen extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          color: primaryColor,
-                        ),
+                        height: 80,
+                        width: 80,
+                        color: primaryColor,
                       ),
                       const SizedBox(width: 10),
                       Container(
-                        child: Container(
-                          height: 80,
-                          width: 80,
-                          color: red,
-                        ),
+                        height: 80,
+                        width: 80,
+                        color: red,
                       ),
                       const SizedBox(width: 20),
-                      Container(
-                        child: Text(
-                          'Maize and Groundnut\nseeds giiven wiith 6 bags\nof Fertilizers',
-                          style: textStyle4,
-                        ),
+                      Text(
+                        'Maize and Groundnut\nseeds giiven wiith 6 bags\nof Fertilizers',
+                        style: textStyle0,
                       )
                     ],
                   ),
@@ -49,7 +44,14 @@ class ProductsScreen extends StatelessWidget {
                     children: [
                       const Text('Maize is also is a...'),
                       TextButton(
-                          onPressed: () {}, child: const Text('Read more'))
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const ProductsDetail()));
+                        },
+                        child: const Text('Read more'),
+                      )
                     ],
                   )
                 ],

@@ -27,8 +27,8 @@ class CreateAccount extends StatelessWidget {
                     image: AssetImage('assets/agro_store.png'),
                   ),
                 ),
-                const SizedBox(height: 10),
-                const Text('Create Account'),
+                const SizedBox(height: 8),
+                Text('Create Account', style: textStyle),
                 const SizedBox(height: 20),
                 Column(
                   children: [

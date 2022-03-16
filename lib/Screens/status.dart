@@ -1,4 +1,6 @@
+import 'package:agro_store/Screens/payment.dart';
 import 'package:agro_store/Stlyes/colors.dart';
+import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
@@ -47,12 +49,16 @@ class StatusPage extends StatelessWidget {
                     Row(
                       children: [
                         Text('23423'),
-                        SizedBox(width: 20),
+                        const SizedBox(width: 20),
                         Container(
                           height: 20,
                           width: 60,
                           color: primaryColor,
-                          child: Center(child: Text('Approved')),
+                          child: Center(
+                              child: Text(
+                            'Approved',
+                            style: textStyle1,
+                          )),
                         ),
                       ],
                     ),
@@ -60,7 +66,7 @@ class StatusPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Card(
               child: Container(
                 padding: const EdgeInsets.all(20),
@@ -68,15 +74,27 @@ class StatusPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                        alignment: Alignment.topLeft,
-                        child: const Text('Application Information')),
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Application Information',
+                        style: textStyle4,
+                      ),
+                    ),
                     const SizedBox(height: 20),
-                    const Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a hendrerit tortor. Sed tempor purus auctor lacus posuere fermentum. Aenean et lorem volutpat, posuere dolor eu, faucibus ante. Ut venenatis consectetur dui id lacinia. Duis nec ante felis. Cras rutrum aliquet egestas. Fusce condimentum eleifend erat eget porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur finibus nisl augue, in porta dolor commodo eget. Nunc iaculis vitae leo eu eleifend. Amount to be paid is Z3000. This excludes other charges'),
+                    Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a hendrerit tortor. Sed tempor purus auctor lacus posuere fermentum. Aenean et lorem volutpat, posuere dolor eu, faucibus ante. Ut venenatis consectetur dui id lacinia. Duis nec ante felis. Cras rutrum aliquet egestas. Fusce condimentum eleifend erat eget porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur finibus nisl augue, in porta dolor commodo eget. Nunc iaculis vitae leo eu eleifend. Amount to be paid is Z3000. This excludes other charges',
+                      style: textStyle4,
+                    ),
                     Container(
                       alignment: Alignment.bottomRight,
                       child: TextButton(
-                          onPressed: () {}, child: const Text('Make Payment')),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => const PaymentPage()));
+                          },
+                          child: const Text('Make Payment')),
                     )
                   ],
                 ),

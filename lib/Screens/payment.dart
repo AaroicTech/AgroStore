@@ -1,3 +1,4 @@
+import 'package:agro_store/Screens/application.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:flutter/material.dart';
 import '../Stlyes/colors.dart';
@@ -24,100 +25,67 @@ class _PaymentPageState extends State<PaymentPage> {
                 Card(
                   child: Column(
                     children: [
-                      ListTile(
-                        leading: const Text('Products'),
-                        trailing: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                      ListTile(
-                        leading: const Text('History'),
-                        trailing: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                      ListTile(
-                        leading: const Text('Orders'),
-                        trailing: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
-                      ListTile(
-                        leading: CircleAvatar(
-                            radius: 10,
-                            backgroundImage: AssetImage('assets/google.png')),
-                        title: const Text('5339............5678'),
-                        trailing: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  child: Column(
-                    children: [
                       Column(
                         children: [
                           Container(
-                            alignment: Alignment.topLeft,
-                            child: const Text('235245245023423'),
+                            margin: const EdgeInsets.only(top: 20),
+                            padding: const EdgeInsets.only(right: 260),
+                            child: Text(
+                              '235245245023423',
+                              style: textStyle0,
+                            ),
                           ),
                           const SizedBox(height: 10),
-                          Row(
-                            children: [
-                              Container(
-                                child: Container(
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Row(
+                              children: [
+                                Container(
                                   height: 70,
                                   width: 70,
                                   color: primaryColor,
                                 ),
-                              ),
-                              const SizedBox(width: 10),
-                              Container(
-                                child: Container(
+                                const SizedBox(width: 5),
+                                Container(
                                   height: 70,
                                   width: 70,
-                                  color: primaryColor,
+                                  color: red,
                                 ),
-                              ),
-                              const SizedBox(width: 20),
-                              Container(
-                                child: Text(
+                                const SizedBox(width: 20),
+                                Text(
                                   'Maize and Groundnut\nseeds giiven wiith 6 bags\nof Fertilizers',
                                   style: textStyle4,
-                                ),
-                              )
-                            ],
+                                )
+                              ],
+                            ),
                           ),
                           const SizedBox(height: 10),
                         ],
                       ),
                       ListTile(
-                        leading: const Text('Amount to be Paid'),
-                        trailing: const Text('23000.00'),
+                        leading: Text('Amount to be Paid', style: textStyle4),
+                        trailing: Text('23000.00', style: textStyle4),
                       ),
                       ListTile(
-                        leading: const Text('Shipping'),
-                        trailing: const Text('210.00'),
+                        leading: Text('Shipping', style: textStyle4),
+                        trailing: Text('210.00', style: textStyle4),
                       ),
                       ListTile(
-                        leading: const Text('Vat'),
-                        trailing: const Text('20.00'),
+                        leading: Text('Vat', style: textStyle4),
+                        trailing: Text(
+                          '20.00',
+                          style: textStyle4,
+                        ),
                       ),
                       ListTile(
-                        leading: const Text('Total'),
-                        trailing: const Text('23010.00'),
+                        leading: Text(
+                          'Total',
+                          style: textStyle4,
+                        ),
+                        trailing: Text(
+                          '23010.00',
+                          style: textStyle4,
+                        ),
                       ),
                     ],
                   ),
@@ -125,15 +93,21 @@ class _PaymentPageState extends State<PaymentPage> {
                 const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.only(left: 250),
-                  child: Container(
-                    height: 40,
-                    width: 80,
-                    color: primaryColor,
-                    alignment: Alignment.bottomLeft,
-                    child: Center(
-                      child: Text(
-                        'Proceed',
-                        style: textStyle1,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => Application()));
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 80,
+                      color: primaryColor,
+                      alignment: Alignment.bottomLeft,
+                      child: Center(
+                        child: Text(
+                          'Proceed',
+                          style: textStyle1,
+                        ),
                       ),
                     ),
                   ),
