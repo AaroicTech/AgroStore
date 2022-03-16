@@ -23,7 +23,7 @@ class _PaymentPageState extends State<PaymentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const MainDrawer(),
-      key: key,
+     key: key,
       appBar: appBar(onTap: showDrawer),
       body: ListView(
         padding: EdgeInsets.zero,

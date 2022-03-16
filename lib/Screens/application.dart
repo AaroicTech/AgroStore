@@ -4,14 +4,10 @@ import 'package:flutter/material.dart';
 import '../Widget/drawer.dart';
 import '../Widget/appbar.dart';
 
-class Application extends StatefulWidget {
+class Application extends StatelessWidget {
   Application({Key? key}) : super(key: key);
 
   @override
-  State<Application> createState() => _ApplicationState();
-}
-
-class _ApplicationState extends State<Application> {
   GlobalKey<ScaffoldState> key = GlobalKey();
 
   void showDrawer() {
