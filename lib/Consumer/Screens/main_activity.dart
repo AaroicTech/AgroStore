@@ -1,10 +1,10 @@
-import 'package:agro_store/Screens/Bottom_nav_pages/History/history.dart';
-import 'package:agro_store/Screens/Bottom_nav_pages/Home_screen/home_screen.dart';
+import 'package:agro_store/Consumer/Screens/Bottom_nav_pages/History/history.dart';
+import 'package:agro_store/Consumer/Screens/Bottom_nav_pages/Profile/profile.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/drawer.dart';
-import '/Screens/Bottom_nav_pages/Profile/profile.dart';
 import 'package:flutter/material.dart';
+import 'Bottom_nav_pages/Home_screen/home_screen.dart';
 import 'Bottom_nav_pages/Messages/messages.dart';
 
 class MainActivity extends StatefulWidget {

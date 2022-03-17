@@ -1,9 +1,11 @@
-import 'package:agro_store/Screens/Products/product_detail.dart';
+import 'package:agro_store/Consumer/Screens/Products/product_detail.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
+
+
 
 class ProductsScreen extends StatefulWidget {
   ProductsScreen({Key? key}) : super(key: key);

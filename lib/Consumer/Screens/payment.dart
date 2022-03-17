@@ -1,9 +1,11 @@
+
 import 'package:agro_store/Consumer/Screens/application.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
-import '../Stlyes/colors.dart';
-import '../Stlyes/fonts.dart';
+import '../../Stlyes/colors.dart';
+import '../../Stlyes/fonts.dart';
+
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);

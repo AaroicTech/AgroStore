@@ -1,8 +1,8 @@
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
-import '../Widget/drawer.dart';
-import '../Widget/appbar.dart';
+import '../../Widget/appbar.dart';
+import '../../Widget/drawer.dart';
 
 class Compliant extends StatelessWidget {
   Compliant({Key? key}) : super(key: key);

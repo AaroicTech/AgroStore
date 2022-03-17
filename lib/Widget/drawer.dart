@@ -1,9 +1,9 @@
-import 'package:agro_store/Screens/Bottom_nav_pages/History/history.dart';
-import 'package:agro_store/Screens/Bottom_nav_pages/Messages/messages.dart';
-import 'package:agro_store/Screens/Products/products_screen.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:flutter/material.dart';
-import '../Screens/orders.dart';
+import '../Consumer/Screens/Bottom_nav_pages/History/history.dart';
+import '../Consumer/Screens/Bottom_nav_pages/Messages/messages.dart';
+import '../Consumer/Screens/Products/products_screen.dart';
+import '../Consumer/Screens/orders.dart';
 import '../Stlyes/fonts.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -40,57 +40,64 @@ class MainDrawer extends StatelessWidget {
                 Card(
                   child: Column(
                     children: [
-                      ListTile(
-                        leading: const Text('Products'),
-                        trailing: IconButton(
-                          onPressed: () {
-                            Navigator.push(
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (_) => ProductsScreen()));
-                          },
-                          icon: const Icon(Icons.arrow_forward_ios),
+                        },
+                        child: ListTile(
+                          leading: const Text('Products'),
+                          trailing:  const Icon(Icons.arrow_forward_ios),
+                          
                         ),
                       ),
-                      ListTile(
-                        leading: const Text('History'),
-                        trailing: IconButton(
-                          onPressed: () {
-                            Navigator.push(
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (_) => HistoryPage('drawer')));
-                          },
-                          icon: const Icon(Icons.arrow_forward_ios),
+                        },
+                        child: ListTile(
+                          leading: const Text('History'),
+                          trailing:  const Icon(Icons.arrow_forward_ios),
+                          
                         ),
                       ),
-                      ListTile(
-                        leading: const Text('Orders'),
-                        trailing: IconButton(
-                          onPressed: () {
-                            Navigator.push(
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (_) =>const OrdersPage()));
-                          },
-                          icon: const Icon(Icons.arrow_forward_ios),
+                        },
+                        child: ListTile(
+                          leading: const Text('Orders'),
+                          trailing:  const Icon(Icons.arrow_forward_ios),
+                          
                         ),
                       ),
-                      ListTile(
-                        leading: const Text('Massages'),
-                        trailing: IconButton(
-                          onPressed: () {Navigator.push(
+                    GestureDetector(
+                      onTap:(){
+                         Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => Messages('drawer')));},
-                          icon: const Icon(Icons.arrow_forward_ios),
+                                    builder: (_) => Messages('drawer')));
+                      },
+                        child: ListTile(
+                          leading: const Text('Massages'),
+                          trailing:  const Icon(Icons.arrow_forward_ios),
+                          
                         ),
                       ),
-                      ListTile(
-                        leading: const Text('Send Demoplaint'),
-                        trailing: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios),
+                      GestureDetector(
+                        onTap: (){},
+                        child: ListTile(
+                          leading: const Text('Send Demoplaint'),
+                          trailing:  const Icon(Icons.arrow_forward_ios),
+                          
                         ),
                       ),
                     ],
@@ -99,25 +106,28 @@ class MainDrawer extends StatelessWidget {
                 Card(
                   child: Column(
                     children: [
-                      ListTile(
-                        leading: const Text('About Us'),
-                        trailing: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios),
+                      GestureDetector(
+                        onTap: (){},
+                        child: ListTile(
+                          leading: const Text('About Us'),
+                          trailing:  const Icon(Icons.arrow_forward_ios),
+                          
                         ),
                       ),
-                      ListTile(
-                        leading: const Text('Settings'),
-                        trailing: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios),
+                      GestureDetector(
+                        onTap: (){},
+                        child: ListTile(
+                          leading: const Text('Settings'),
+                          trailing:  const Icon(Icons.arrow_forward_ios),
+                          
                         ),
                       ),
-                      ListTile(
-                        leading: const Text('Contact us'),
-                        trailing: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_forward_ios),
+                      GestureDetector(
+                        onTap: (){},
+                        child: ListTile(
+                          leading: const Text('Contact us'),
+                          trailing:  const Icon(Icons.arrow_forward_ios),
+                          
                         ),
                       ),
                     ],

@@ -1,5 +1,7 @@
-import 'package:agro_store/Screens/Auth_screen/log_in.dart';
+
 import 'package:flutter/material.dart';
+
+import 'Auth_screen/log_in.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
-import 'package:agro_store/Screens/Auth_screen/create_account.dart';
-import 'package:agro_store/Screens/main_activity.dart';
+import 'package:agro_store/Consumer/Screens/Auth_screen/create_account.dart';
+import 'package:agro_store/Consumer/Screens/main_activity.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';

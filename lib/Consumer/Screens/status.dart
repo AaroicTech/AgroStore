@@ -1,9 +1,11 @@
-import 'package:agro_store/Screens/payment.dart';
+
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
+
+
 
 class StatusPage extends StatelessWidget {
   const StatusPage({Key? key}) : super(key: key);
@@ -89,10 +91,10 @@ class StatusPage extends StatelessWidget {
                       alignment: Alignment.bottomRight,
                       child: TextButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => const PaymentPage()));
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (_) => const PaymentPage()));
                           },
                           child: const Text('Make Payment')),
                     )

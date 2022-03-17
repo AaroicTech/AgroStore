@@ -1,4 +1,5 @@
-import 'package:agro_store/Screens/status.dart';
+
+import 'package:agro_store/Consumer/Screens/status.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';

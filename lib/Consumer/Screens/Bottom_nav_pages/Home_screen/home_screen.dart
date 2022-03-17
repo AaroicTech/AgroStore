@@ -1,7 +1,7 @@
-import 'package:agro_store/Screens/Products/products_screen.dart';
+import 'package:agro_store/Consumer/Screens/Products/products_screen.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
-import '../../../Stlyes/colors.dart';
+import '../../../../Stlyes/colors.dart';
 
 class HomePage extends StatefulWidget {
   @override
