@@ -1,4 +1,5 @@
 import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
+import 'package:agro_store/Admin/Admin_home_page/adminApplication.dart';
 import 'package:agro_store/Admin/Admin_home_page/dashbord2.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
@@ -13,11 +14,18 @@ class FirstDashbord extends StatefulWidget {
 }
 
 class _FirstDashbordState extends State<FirstDashbord> {
+  GlobalKey<ScaffoldState> key = GlobalKey();
+
+  void showDrower() {
+    key.currentState!.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: key,
       drawer: const AdminDrawer(),
-      appBar: appBar(),
+      appBar: appBar(onTap: showDrower),
       body: ListView(
         children: [
           Container(
@@ -44,7 +52,7 @@ class _FirstDashbordState extends State<FirstDashbord> {
                         MaterialPageRoute(
                             builder: (_) => const SecondDashbord()));
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_forward_ios,
                     size: 15,
                   ),
@@ -124,7 +132,7 @@ class _FirstDashbordState extends State<FirstDashbord> {
                     ),
                     ListTile(
                       leading: const CircleAvatar(
-                        child: const Icon(Icons.online_prediction_rounded),
+                        child: Icon(Icons.online_prediction_rounded),
                       ),
                       title: const Text('Ordered'),
                       subtitle: const Text('asdasdasd'),
@@ -138,7 +146,7 @@ class _FirstDashbordState extends State<FirstDashbord> {
                     ),
                     ListTile(
                       leading: const CircleAvatar(
-                        child: const Icon(Icons.drive_eta),
+                        child: Icon(Icons.drive_eta),
                       ),
                       title: const Text('Ordered'),
                       subtitle: const Text('asdasdasd'),

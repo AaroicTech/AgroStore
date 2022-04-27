@@ -1,21 +1,34 @@
-
-import 'package:agro_store/Consumer/Screens/status.dart';
-import 'package:agro_store/Stlyes/colors.dart';
-import 'package:agro_store/Stlyes/fonts.dart';
-import 'package:agro_store/Widget/appbar.dart';
 import 'package:flutter/material.dart';
+import '../../../../Stlyes/colors.dart';
+import '../../../../Stlyes/fonts.dart';
+import '../../../../Widget/appbar.dart';
+import '../../../../Widget/drawer.dart';
+import '../../status.dart';
 
-class HistoryPage extends StatelessWidget {
+class HistoryPage extends StatefulWidget {
   HistoryPage(this.path, {Key? key}) : super(key: key);
 
   final String path;
 
   @override
+  State<HistoryPage> createState() => _HistoryPageState();
+}
+
+class _HistoryPageState extends State<HistoryPage> {
+  GlobalKey<ScaffoldState> key = GlobalKey();
+
+  void showDrawer() {
+    key.currentState!.openDrawer();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // print(path);
     return Scaffold(
-     
-      appBar: path == 'main' ? null : appBar(),
+      drawer: const MainDrawer(),
+
+     key:key,
+      appBar: widget.path == 'main' ? null : appBar(onTap: showDrawer),
       body: Container(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
