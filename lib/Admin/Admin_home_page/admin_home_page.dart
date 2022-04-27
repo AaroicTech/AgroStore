@@ -79,10 +79,10 @@ class _AdminHomePageState extends State<AdminHomePage> {
           ),
         ],
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 300,
+          maxCrossAxisExtent: 250,
           childAspectRatio: 6 / 6,
           crossAxisSpacing: 20,
-          mainAxisSpacing: 60,
+          mainAxisSpacing: 20,
         ),
       ),
     );

@@ -26,7 +26,10 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all()),
                   child: Container(
-                    child: Image.asset('assets/Frame 33575.png'),
+                    child: Image.asset(
+                      'assets/Frame 33575.png',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -74,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (_) =>
-                                                       ProductsScreen()));
+                                                      ProductsScreen()));
                                         },
                                         child: Card(
                                           child: Column(

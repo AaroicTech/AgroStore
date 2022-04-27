@@ -1,6 +1,8 @@
 import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
+import 'package:agro_store/Admin/Admin_home_page/admin_home_page.dart';
 import 'package:agro_store/Admin/Admin_home_page/dashbord.dart';
 import 'package:flutter/material.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,8 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       // home: const SplashScreen(),
-      home: FirstDashbord(),
-      //home: BarChartDemo(),
+      home: const AdminHomePage(),
     );
   }
 }

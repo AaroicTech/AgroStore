@@ -64,6 +64,7 @@ class SignUp extends StatelessWidget {
                 Column(
                   children: [
                     Container(
+                      margin: const EdgeInsets.symmetric(vertical: 10),
                       alignment: Alignment.topLeft,
                       child: Text(
                         'Upload image of valid ID',
@@ -74,7 +75,7 @@ class SignUp extends StatelessWidget {
                       child: Container(
                         height: 100,
                         width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(color: Colors.black12
+                        decoration: const BoxDecoration(color: Colors.black12
                             // border: BoxBorder()
                             ),
                         child: Column(
@@ -87,6 +88,9 @@ class SignUp extends StatelessWidget {
                                 Icons.add,
                                 color: white,
                               ),
+                            ),
+                            const SizedBox(
+                              height: 5,
                             ),
                             Text(
                               'Tap to Upload image',
@@ -129,36 +133,32 @@ class SignUp extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 80),
-                Padding(
-                  padding: const EdgeInsets.only(left: 195),
-                  child: Row(
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Text('Sign Up', style: textStyle0),
-                      ),
-                      const SizedBox(width: 10),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => MainActivity()));
-                        },
-                        child: Container(
-                          height: 35,
-                          width: 80,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: primaryColor,
-                          ),
-                          child: Center(
-                            child: Icon(Icons.arrow_forward, color: white),
-                          ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      child: Text('Sign Up', style: textStyle0),
+                    ),
+                    const SizedBox(width: 10),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => MainActivity()));
+                      },
+                      child: Container(
+                        height: 35,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: primaryColor,
+                        ),
+                        child: Center(
+                          child: Icon(Icons.arrow_forward, color: white),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
