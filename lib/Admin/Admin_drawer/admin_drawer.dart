@@ -1,3 +1,5 @@
+import 'package:agro_store/Admin/Admin_orders.dart/admin_orders.dart';
+import 'package:agro_store/Admin/Admin_profile/admin_profile.dart';
 import 'package:agro_store/Consumer/Screens/Bottom_nav_pages/Profile/profile.dart';
 import 'package:agro_store/Consumer/Screens/orders.dart';
 import 'package:agro_store/Stlyes/colors.dart';
@@ -47,7 +49,7 @@ class AdminDrawer extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => ProfilePage()));
+                              MaterialPageRoute(builder: (_) => AdminProfilePage()));
                         },
                         child: const ListTile(
                           leading: const Text('Profile'),
@@ -59,7 +61,7 @@ class AdminDrawer extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (_) => OrdersScreen()));
+                                  builder: (_) => AdminOrdersScreen()));
                         },
                         child: const ListTile(
                           leading: const Text('Orders'),

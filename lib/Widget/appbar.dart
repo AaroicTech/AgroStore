@@ -1,3 +1,4 @@
+import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
 import '../Stlyes/colors.dart';
 
@@ -12,9 +13,20 @@ appBar({VoidCallback? onTap}) {
     ),
     elevation: 0,
     backgroundColor: Colors.transparent,
-    title: Container(
-      width: 100,
-      child: Image.asset('assets/agro_store.png'),
+    title: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          width: 100,
+          child: Image.asset('assets/agro_store.png'),
+        ),
+        CircleAvatar(
+            child: Text(
+              'AS',
+              style: textStyle2,
+            ),
+            backgroundColor: Colors.black12)
+      ],
     ),
   );
 }

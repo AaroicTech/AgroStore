@@ -1,3 +1,4 @@
+import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
 import 'package:agro_store/Consumer/Screens/Products/product_detail.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
@@ -5,14 +6,14 @@ import 'package:agro_store/Widget/appbar.dart';
 import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
 
-class OrdersScreen extends StatefulWidget {
-  OrdersScreen({Key? key}) : super(key: key);
+class AdminOrdersScreen extends StatefulWidget {
+  AdminOrdersScreen({Key? key}) : super(key: key);
 
   @override
-  State<OrdersScreen> createState() => _OrdersScreenState();
+  State<AdminOrdersScreen> createState() => _AdminOrdersScreenState();
 }
 
-class _OrdersScreenState extends State<OrdersScreen> {
+class _AdminOrdersScreenState extends State<AdminOrdersScreen> {
   GlobalKey<ScaffoldState> key = GlobalKey();
 
   void showDrawer() {
@@ -23,13 +24,13 @@ class _OrdersScreenState extends State<OrdersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: key,
-      drawer: const MainDrawer(),
+      drawer: const AdminDrawer(),
       appBar: appBar(onTap: showDrawer),
       body: Container(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: List.generate(
-            3,
+            1,
             (index) => Card(
               child: Column(
                 children: [

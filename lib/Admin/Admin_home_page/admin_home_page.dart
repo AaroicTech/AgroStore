@@ -1,6 +1,6 @@
 import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
 import 'package:agro_store/Admin/Admin_home_page/dashbord.dart';
-import 'package:agro_store/Stlyes/colors.dart';
+
 import 'package:flutter/material.dart';
 import '../../Widget/appbar.dart';
 
@@ -28,9 +28,8 @@ class _AdminHomePageState extends State<AdminHomePage> {
         padding: const EdgeInsets.only(top: 20),
         child: GridView(
           padding: const EdgeInsets.all(20),
-          children: List.generate(
-            4,
-            (index) => GestureDetector(
+          children: [
+            GestureDetector(
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (_) => const FirstDashbord()));
@@ -41,19 +40,59 @@ class _AdminHomePageState extends State<AdminHomePage> {
                   borderRadius: BorderRadius.circular(13),
                   color: Colors.white,
                 ),
-                child: Center(
-                  child: Icon(
-                    Icons.dashboard,
-                    size: 60,
-                    color: primaryColor,
-                  ),
-                ),
+                child: const Center(
+                    child: Image(image: AssetImage('assets/Vector_1.png'))),
               ),
             ),
-          ),
-          //       Icons.production_quantity_limits,
-          //       Icons.message,
-          //       Icons.card_travel,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const FirstDashbord()));
+              },
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(13),
+                  color: Colors.white,
+                ),
+                child: const Center(
+                    // child: Image(image: AssetImage('assets/Vector_2.png')),
+                    ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const FirstDashbord()));
+              },
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(13),
+                  color: Colors.white,
+                ),
+                child: const Center(
+                    // child: Image(image: AssetImage('assets/Vector_3.png')),
+                    ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const FirstDashbord()));
+              },
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(13),
+                  color: Colors.white,
+                ),
+                child: const Center(
+                    // child: Image(image: AssetImage('assets/Vector_4.png')),
+                    ),
+              ),
+            ),
+          ],
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 300,
             childAspectRatio: 6 / 6,

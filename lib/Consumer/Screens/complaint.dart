@@ -15,10 +15,10 @@ class Compliant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(   
-     key: key,
+    return Scaffold(
+      key: key,
       drawer: const MainDrawer(),
-      appBar: appBar( onTap: showDrawer),
+      appBar: appBar(onTap: showDrawer),
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(top: 20),
@@ -43,6 +43,11 @@ class Compliant extends StatelessWidget {
                         decoration: BoxDecoration(
                           border: Border.all(),
                         ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -64,6 +69,11 @@ class Compliant extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                           border: Border.all(),
+                        ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                          ),
                         ),
                       ),
                     ),
