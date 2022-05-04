@@ -1,3 +1,4 @@
+import 'package:agro_store/Consumer/Screens/Auth_screen/log_in.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:flutter/material.dart';
 import '../Consumer/Screens/Bottom_nav_pages/History/history.dart';
@@ -41,63 +42,58 @@ class MainDrawer extends StatelessWidget {
                   child: Column(
                     children: [
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => ProductsScreen()));
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => ProductsScreen()));
                         },
-                        child: ListTile(
-                          leading: const Text('Products'),
-                          trailing:  const Icon(Icons.arrow_forward_ios),
-                          
+                        child: const ListTile(
+                          leading: Text('Products'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => HistoryPage('drawer')));
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => HistoryPage('drawer')));
                         },
-                        child: ListTile(
-                          leading: const Text('History'),
-                          trailing:  const Icon(Icons.arrow_forward_ios),
-                          
+                        child: const ListTile(
+                          leading: Text('History'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) =>const OrdersPage()));
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => OrdersScreen()));
                         },
-                        child: ListTile(
-                          leading: const Text('Orders'),
-                          trailing:  const Icon(Icons.arrow_forward_ios),
-                          
-                        ),
-                      ),
-                    GestureDetector(
-                      onTap:(){
-                         Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => Messages('drawer')));
-                      },
-                        child: ListTile(
-                          leading: const Text('Massages'),
-                          trailing:  const Icon(Icons.arrow_forward_ios),
-                          
+                        child: const ListTile(
+                          leading: Text('Orders'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){},
-                        child: ListTile(
-                          leading: const Text('Send Demoplaint'),
-                          trailing:  const Icon(Icons.arrow_forward_ios),
-                          
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => Messages('drawer')));
+                        },
+                        child: const ListTile(
+                          leading: Text('Massages'),
+                          trailing: Icon(Icons.arrow_forward_ios),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {},
+                        child: const ListTile(
+                          leading: Text('Send Demoplaint'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                     ],
@@ -107,27 +103,24 @@ class MainDrawer extends StatelessWidget {
                   child: Column(
                     children: [
                       GestureDetector(
-                        onTap: (){},
-                        child: ListTile(
-                          leading: const Text('About Us'),
-                          trailing:  const Icon(Icons.arrow_forward_ios),
-                          
+                        onTap: () {},
+                        child: const ListTile(
+                          leading: Text('About Us'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){},
-                        child: ListTile(
-                          leading: const Text('Settings'),
-                          trailing:  const Icon(Icons.arrow_forward_ios),
-                          
+                        onTap: () {},
+                        child: const ListTile(
+                          leading: Text('Settings'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
-                        onTap: (){},
-                        child: ListTile(
-                          leading: const Text('Contact us'),
-                          trailing:  const Icon(Icons.arrow_forward_ios),
-                          
+                        onTap: () {},
+                        child: const ListTile(
+                          leading: Text('Contact us'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                     ],
@@ -137,7 +130,28 @@ class MainDrawer extends StatelessWidget {
                 Container(
                   alignment: Alignment.bottomLeft,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Center(child: Text('Exit')),
+                          content: const Text('Are you sure you want to exit?'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Cancel'),
+                              child: const Text('Cancel'),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => const LogInPage())),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                     child: Text(
                       'Logout',
                       style: textStyle2,

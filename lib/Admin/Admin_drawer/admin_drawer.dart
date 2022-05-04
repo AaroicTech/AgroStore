@@ -2,6 +2,7 @@ import 'package:agro_store/Consumer/Screens/Bottom_nav_pages/Profile/profile.dar
 import 'package:agro_store/Consumer/Screens/orders.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:flutter/material.dart';
+import '../../Consumer/Screens/Auth_screen/log_in.dart';
 import '../../Stlyes/fonts.dart';
 
 class AdminDrawer extends StatelessWidget {
@@ -32,7 +33,7 @@ class AdminDrawer extends StatelessWidget {
                 const SizedBox(width: 6),
                 Container(
                   width: 100,
-                  child:const Text('Admin'),
+                  child: const Text('Admin'),
                 ),
               ],
             ),
@@ -55,8 +56,10 @@ class AdminDrawer extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => OrdersPage()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => OrdersScreen()));
                         },
                         child: const ListTile(
                           leading: const Text('Orders'),
@@ -91,7 +94,28 @@ class AdminDrawer extends StatelessWidget {
                 Container(
                   alignment: Alignment.bottomLeft,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Center(child: Text('Exit')),
+                          content: const Text('Are you sure you want to exit?'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Cancel'),
+                              child: const Text('Cancel'),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => const LogInPage())),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                     child: Text(
                       'Logout',
                       style: textStyle2,

@@ -3,13 +3,9 @@ import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
 
-class SignUp extends StatefulWidget {
-  SignUp({Key? key}) : super(key: key);
+class AdminSignUP extends StatelessWidget {
+  AdminSignUP({Key? key}) : super(key: key);
 
-  @override
-  State<SignUp> createState() => _SignUpState();
-}
-class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +64,6 @@ class _SignUpState extends State<SignUp> {
                 Column(
                   children: [
                     Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
                       alignment: Alignment.topLeft,
                       child: Text(
                         'Upload image of valid ID',
@@ -79,7 +74,7 @@ class _SignUpState extends State<SignUp> {
                       child: Container(
                         height: 100,
                         width: MediaQuery.of(context).size.width,
-                        decoration: const BoxDecoration(color: Colors.black12
+                        decoration: BoxDecoration(color: Colors.black12
                             // border: BoxBorder()
                             ),
                         child: Column(
@@ -92,9 +87,6 @@ class _SignUpState extends State<SignUp> {
                                 Icons.add,
                                 color: white,
                               ),
-                            ),
-                            const SizedBox(
-                              height: 5,
                             ),
                             Text(
                               'Tap to Upload image',
@@ -137,32 +129,36 @@ class _SignUpState extends State<SignUp> {
                   ],
                 ),
                 const SizedBox(height: 80),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TextButton(
-                      onPressed: () {},
-                      child: Text('Sign Up', style: textStyle0),
-                    ),
-                    const SizedBox(width: 10),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => MainActivity()));
-                      },
-                      child: Container(
-                        height: 35,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: primaryColor,
-                        ),
-                        child: Center(
-                          child: Icon(Icons.arrow_forward, color: white),
+                Padding(
+                  padding: const EdgeInsets.only(left: 195),
+                  child: Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text('Sign Up', style: textStyle0),
+                      ),
+                      const SizedBox(width: 10),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => MainActivity()));
+                        },
+                        child: Container(
+                          height: 35,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: primaryColor,
+                          ),
+                          child: Center(
+                            child: Icon(Icons.arrow_forward, color: white),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),

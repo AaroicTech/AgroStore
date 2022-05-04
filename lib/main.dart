@@ -2,7 +2,8 @@ import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
 import 'package:agro_store/Admin/Admin_home_page/admin_home_page.dart';
 import 'package:agro_store/Admin/Admin_home_page/dashbord.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/material.dart';
+import 'Consumer/Screens/slpash_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -17,9 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      // home: const SplashScreen(),
-      home: const AdminHomePage(),
+      home: const SplashScreen(),
+      // home: const AdminHomePage(),
     );
+      //  home: const SplashScreen());
   }
 }
 //07062141269

@@ -1,23 +1,16 @@
-import 'package:agro_store/Admin/Admin_home_page/admin_home_page.dart';
 import 'package:agro_store/Consumer/Screens/Auth_screen/create_account.dart';
 import 'package:agro_store/Consumer/Screens/main_activity.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
 
-class LogInPage extends StatefulWidget {
- const LogInPage({Key? key}) : super(key: key);
+class AdminLogIn extends StatelessWidget {
+  AdminLogIn({Key? key}) : super(key: key);
 
-  @override
-  State<LogInPage> createState() => _LogInPageState();
-}
+  final _email = TextEditingController();
+  final _pwd = TextEditingController();
+  final _form = GlobalKey<State>();
 
-String dropdownValue = 'Selecte Domain';
-final _email = TextEditingController();
-final _pwd = TextEditingController();
-final _form = GlobalKey<State>();
-
-class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,39 +28,7 @@ class _LogInPageState extends State<LogInPage> {
                     image: AssetImage('assets/agro_store.png'),
                   ),
                 ),
-                const SizedBox(height: 40),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  height: 40,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(),
-                  ),
-                  child: Container(
-                    child: DropdownButton<String>(
-                      isExpanded: true,
-                      value: dropdownValue,
-                      icon: const Icon(Icons.more_vert),
-                      elevation: 16,
-                      style:  TextStyle(color: primaryColor),
-                      underline: Container(),
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          dropdownValue = newValue!;
-                        });
-                      },
-                      items: <String>['Selecte Domain', 'Admin', 'Consumer']
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
                 Column(
                   children: [
                     Container(
@@ -114,17 +75,8 @@ class _LogInPageState extends State<LogInPage> {
                 const SizedBox(height: 70),
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      if (dropdownValue == 'Admin') {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const AdminHomePage()));
-                      } else {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => MainActivity()));
-                      }
-                    });
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => MainActivity()));
                   },
                   child: Container(
                     height: 50,
@@ -142,7 +94,10 @@ class _LogInPageState extends State<LogInPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => CreateAccount()));
+                  },
                   child: RichText(
                     text: TextSpan(
                       text: 'Dont have an account?  ',

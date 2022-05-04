@@ -1,7 +1,9 @@
+import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:flutter/material.dart';
 import '../../Stlyes/colors.dart';
+import 'adminApplication.dart';
 import 'dashbord.dart';
 
 class SecondDashbord extends StatefulWidget {
@@ -12,10 +14,17 @@ class SecondDashbord extends StatefulWidget {
 }
 
 class _SecondDashbordState extends State<SecondDashbord> {
+  GlobalKey<ScaffoldState> key = GlobalKey();
+  void showDrawer() {
+    key.currentState!.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      drawer: const AdminDrawer(),
+      key: key,
+      appBar: appBar(onTap: showDrawer),
       body: ListView(
         children: [
           Container(
@@ -23,6 +32,10 @@ class _SecondDashbordState extends State<SecondDashbord> {
             child: Row(
               //  mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                const Icon(
+                  Icons.arrow_back_ios,
+                  size: 15,
+                ),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -36,11 +49,14 @@ class _SecondDashbordState extends State<SecondDashbord> {
                   ),
                 ),
                 SizedBox(width: 210),
-                Text('Applications'),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 15,
-                ),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const AdminApplication()));
+                    },
+                    child: Text('Application'))
               ],
             ),
           ),
@@ -88,7 +104,6 @@ class _SecondDashbordState extends State<SecondDashbord> {
                 color: white,
                 borderRadius: BorderRadius.circular(13),
               ),
-              //child: BarChart([]),
             ),
           ),
           Padding(
@@ -117,7 +132,7 @@ class _SecondDashbordState extends State<SecondDashbord> {
                     ListTile(
                       leading: CircleAvatar(),
                       title: Text('Approved'),
-                      subtitle: Text('asdasdasd'),
+                      subtitle: Text(' successful'),
                       trailing: Container(
                         height: 10,
                         width: 100,
@@ -129,7 +144,7 @@ class _SecondDashbordState extends State<SecondDashbord> {
                     ListTile(
                       leading: CircleAvatar(),
                       title: Text('Declined'),
-                      subtitle: Text('asdasdasd'),
+                      subtitle: Text('Invalid transaction'),
                       trailing: Container(
                         height: 10,
                         width: 100,

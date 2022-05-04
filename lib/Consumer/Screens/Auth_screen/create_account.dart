@@ -1,7 +1,6 @@
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
-
 import 'sign_up.dart';
 
 class CreateAccount extends StatelessWidget {

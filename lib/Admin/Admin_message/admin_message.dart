@@ -2,15 +2,14 @@ import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
-import '../../complaint.dart';
 
-class Messages extends StatefulWidget {
-  Messages(this.path, {Key? key}) : super(key: key);
+class AdminMessages extends StatefulWidget {
+  const AdminMessages(this.path, {Key? key}) : super(key: key);
 
   final String path;
 
   @override
-  State<Messages> createState() => _MessagesState();
+  State<AdminMessages> createState() => _AdminMessagesState();
 }
 
 GlobalKey<ScaffoldState> key = GlobalKey();
@@ -19,7 +18,7 @@ void showDrawer() {
   key.currentState!.openDrawer();
 }
 
-class _MessagesState extends State<Messages> {
+class _AdminMessagesState extends State<AdminMessages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +34,8 @@ class _MessagesState extends State<Messages> {
                 7,
                 (index) => GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => Compliant()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (_) => Compliant()));
                   },
                   child: Card(
                     child: ListTile(
@@ -53,7 +52,7 @@ class _MessagesState extends State<Messages> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

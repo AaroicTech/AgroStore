@@ -69,8 +69,8 @@ class _MainActivityState extends State<MainActivity> {
                       _selectedPage = 3;
                     });
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: CircleAvatar(
                       backgroundImage:
                           AssetImage('assets/unsplash_i2hoD-C2RUA.png'),
@@ -89,7 +89,7 @@ class _MainActivityState extends State<MainActivity> {
           setState(() {
             _selectedPage = value;
           });
-          print(value);
+          // print(value);
         },
         iconSize: 16,
         selectedFontSize: 15,
