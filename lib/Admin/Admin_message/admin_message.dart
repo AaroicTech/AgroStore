@@ -1,7 +1,8 @@
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
-import 'package:agro_store/Widget/drawer.dart';
 import 'package:flutter/material.dart';
+
+import '../Admin_drawer/admin_drawer.dart';
 
 class AdminMessages extends StatefulWidget {
   const AdminMessages(this.path, {Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _AdminMessagesState extends State<AdminMessages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const MainDrawer(),
+      drawer: const AdminDrawer(),
       key: key,
       appBar: widget.path == 'main' ? null : appBar(onTap: showDrawer),
       body: Padding(

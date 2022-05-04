@@ -1,4 +1,3 @@
-
 import 'package:agro_store/Consumer/Screens/application.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:agro_store/Widget/drawer.dart';

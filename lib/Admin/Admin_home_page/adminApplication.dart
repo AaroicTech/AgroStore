@@ -1,3 +1,4 @@
+import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:flutter/material.dart';
@@ -9,16 +10,18 @@ class AdminApplication extends StatefulWidget {
   State<AdminApplication> createState() => _AdminApplicationState();
 }
 
-GlobalKey<ScaffoldState> key = GlobalKey();
+GlobalKey<ScaffoldState> _key = GlobalKey();
 
 void showDrawer() {
-  key.currentState!.openDrawer();
+  _key.currentState!.openDrawer();
 }
 
 class _AdminApplicationState extends State<AdminApplication> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AdminDrawer(),
+      key: _key,
       appBar: appBar(onTap: showDrawer),
       body: Column(
         children: [

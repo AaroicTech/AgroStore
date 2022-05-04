@@ -24,9 +24,7 @@ class _FirstDashbordState extends State<FirstDashbord> {
     return Scaffold(
       key: scaffoldKey,
       drawer: const AdminDrawer(),
-      appBar: appBar(onTap: () {
-        
-      }),
+      appBar: appBar(onTap: showDrawer),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -41,15 +39,6 @@ class _FirstDashbordState extends State<FirstDashbord> {
                         'Earnings',
                         style: textStyle2,
                       ),
-                      // const SizedBox(width: 200),
-                      GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => const SecondDashbord()));
-                          },
-                          child: const Text('Applications')),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
@@ -134,8 +123,7 @@ class _FirstDashbordState extends State<FirstDashbord> {
                           ),
                           ListTile(
                             leading: const CircleAvatar(
-                              child:
-                                  const Icon(Icons.online_prediction_rounded),
+                              child: Icon(Icons.online_prediction_rounded),
                             ),
                             title: const Text('Ordered'),
                             subtitle: const Text('asdasdasd'),
@@ -149,7 +137,7 @@ class _FirstDashbordState extends State<FirstDashbord> {
                           ),
                           ListTile(
                             leading: const CircleAvatar(
-                              child: const Icon(Icons.drive_eta),
+                              child: Icon(Icons.drive_eta),
                             ),
                             title: const Text('Ordered'),
                             subtitle: const Text('asdasdasd'),

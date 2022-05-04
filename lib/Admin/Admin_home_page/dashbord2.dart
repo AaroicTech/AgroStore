@@ -47,7 +47,7 @@ class _SecondDashbordState extends State<SecondDashbord> {
                     style: textStyle2,
                   ),
                 ),
-                SizedBox(width: 210),
+                const SizedBox(width: 210),
                 TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -55,7 +55,7 @@ class _SecondDashbordState extends State<SecondDashbord> {
                           MaterialPageRoute(
                               builder: (_) => const AdminApplication()));
                     },
-                    child: Text('Application'))
+                    child: const Text('Application'))
               ],
             ),
           ),
@@ -129,9 +129,9 @@ class _SecondDashbordState extends State<SecondDashbord> {
                       ),
                     ),
                     ListTile(
-                      leading: CircleAvatar(),
-                      title: Text('Approved'),
-                      subtitle: Text(' successful'),
+                      leading: const CircleAvatar(),
+                      title: const Text('Approved'),
+                      subtitle: const Text(' successful'),
                       trailing: Container(
                         height: 10,
                         width: 100,
@@ -141,9 +141,9 @@ class _SecondDashbordState extends State<SecondDashbord> {
                       ),
                     ),
                     ListTile(
-                      leading: CircleAvatar(),
-                      title: Text('Declined'),
-                      subtitle: Text('Invalid transaction'),
+                      leading: const CircleAvatar(),
+                      title: const Text('Declined'),
+                      subtitle: const Text('Invalid transaction'),
                       trailing: Container(
                         height: 10,
                         width: 100,

@@ -1,5 +1,3 @@
-import 'package:charts_common/src/common/color.dart';
-import 'package:flutter/cupertino.dart';
 
 class BarChartModel {
   String month;

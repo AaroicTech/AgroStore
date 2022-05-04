@@ -1,5 +1,5 @@
+import 'package:agro_store/Admin/Admin_auth/admin_sign_up.dart';
 import 'package:agro_store/Consumer/Screens/Auth_screen/create_account.dart';
-import 'package:agro_store/Consumer/Screens/main_activity.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +76,7 @@ class AdminLogIn extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => MainActivity()));
+                        MaterialPageRoute(builder: (_) => AdminSignUP()));
                   },
                   child: Container(
                     height: 50,

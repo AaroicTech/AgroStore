@@ -1,7 +1,7 @@
+import 'package:agro_store/Admin/AdminProduct/adminProduct.dart';
+import 'package:agro_store/Admin/Admin_home_page/adminApplication.dart';
 import 'package:agro_store/Admin/Admin_orders.dart/admin_orders.dart';
 import 'package:agro_store/Admin/Admin_profile/admin_profile.dart';
-import 'package:agro_store/Consumer/Screens/Bottom_nav_pages/Profile/profile.dart';
-import 'package:agro_store/Consumer/Screens/orders.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:flutter/material.dart';
 import '../../Consumer/Screens/Auth_screen/log_in.dart';
@@ -48,12 +48,14 @@ class AdminDrawer extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => AdminProfilePage()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => AdminProfilePage()));
                         },
                         child: const ListTile(
-                          leading: const Text('Profile'),
-                          trailing: const Icon(Icons.arrow_forward_ios),
+                          leading: Text('Profile'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
@@ -64,29 +66,39 @@ class AdminDrawer extends StatelessWidget {
                                   builder: (_) => AdminOrdersScreen()));
                         },
                         child: const ListTile(
-                          leading: const Text('Orders'),
-                          trailing: const Icon(Icons.arrow_forward_ios),
+                          leading: Text('Orders'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {},
                         child: const ListTile(
-                          leading: const Text('Track Orders'),
-                          trailing: const Icon(Icons.arrow_forward_ios),
+                          leading: Text('Track Orders'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const AdminApplication()));
+                        },
                         child: const ListTile(
-                          leading: const Text('Download Invoice'),
-                          trailing: const Icon(Icons.arrow_forward_ios),
+                          leading: Text('Apllications'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => AdminProductsScreen()));
+                        },
                         child: const ListTile(
-                          leading: const Text('Settings'),
-                          trailing: const Icon(Icons.arrow_forward_ios),
+                          leading: Text('Products'),
+                          trailing: Icon(Icons.arrow_forward_ios),
                         ),
                       ),
                     ],

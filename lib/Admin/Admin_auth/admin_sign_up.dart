@@ -1,7 +1,7 @@
-import 'package:agro_store/Consumer/Screens/main_activity.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
+import '../Admin_home_page/admin_home_page.dart';
 
 class AdminSignUP extends StatelessWidget {
   AdminSignUP({Key? key}) : super(key: key);
@@ -74,7 +74,7 @@ class AdminSignUP extends StatelessWidget {
                       child: Container(
                         height: 100,
                         width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(color: Colors.black12
+                        decoration: const BoxDecoration(color: Colors.black12
                             // border: BoxBorder()
                             ),
                         child: Column(
@@ -143,7 +143,7 @@ class AdminSignUP extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (_) => MainActivity()));
+                                  builder: (_) => const AdminHomePage()));
                         },
                         child: Container(
                           height: 35,

@@ -12,21 +12,21 @@ class AdminProfilePage extends StatelessWidget {
   final address = TextEditingController();
   final previews = TextEditingController();
 
-  //GlobalKey<FormState> formKey = GlobalKey();
+  GlobalKey<FormState> formKey = GlobalKey();
 
-  // @override
-  // GlobalKey<ScaffoldState> key = GlobalKey();
+  @override
+  GlobalKey<ScaffoldState> _key = GlobalKey();
 
-  // void showDrawer() {
-  //   key.currentState!.openDrawer();
-  // }
+  void showDrawer() {
+    _key.currentState!.openDrawer();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: key,
+      key: _key,
       drawer: const AdminDrawer(),
-      appBar: appBar(),
+      appBar: appBar(onTap: showDrawer),
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.only(top: 10),

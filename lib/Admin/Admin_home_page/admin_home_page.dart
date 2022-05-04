@@ -1,7 +1,8 @@
+import 'package:agro_store/Admin/AdminProduct/adminProduct.dart';
 import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
+import 'package:agro_store/Admin/Admin_home_page/adminApplication.dart';
 import 'package:agro_store/Admin/Admin_home_page/dashbord.dart';
-import 'package:flutter/gestures.dart';
-
+import 'package:agro_store/Admin/Admin_message/admin_message.dart';
 import 'package:flutter/material.dart';
 import '../../Widget/appbar.dart';
 
@@ -26,140 +27,137 @@ class _AdminHomePageState extends State<AdminHomePage> {
       drawer: const AdminDrawer(),
       appBar: appBar(onTap: showDrawer),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: GridView(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            padding: const EdgeInsets.all(20),
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const FirstDashbord()));
-                },
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(13),
-                          color: Colors.white,
-                        ),
-                        child: const Center(
-                            child: Image(
-                                image: AssetImage('assets/dashboard.png'))),
+        child: GridView(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.all(20),
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const FirstDashbord()));
+              },
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(13),
+                        color: Colors.white,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: const Text('DashBoard'),
-                    )
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const FirstDashbord()));
-                },
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(13),
-                          color: Colors.white,
-                        ),
-                        child: const Center(
+                      child: const Center(
                           child:
-                              Image(image: AssetImage('assets/products.png')),
-                        ),
-                      ),
+                              Image(image: AssetImage('assets/dashboard.png'))),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: const Text('Products'),
-                    )
-                  ],
-                ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: const Text('DashBoard'),
+                  )
+                ],
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const FirstDashbord()));
-                },
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(13),
-                          color: Colors.white,
-                        ),
-                        child: const Center(
-                          child:
-                              Image(image: AssetImage('assets/messages.png')),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: const Text('Messages'),
-                    )
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const FirstDashbord()));
-                },
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(13),
-                          color: Colors.white,
-                        ),
-                        child: const Center(
-                          child: Image(
-                              image: AssetImage('assets/applications.png')),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: const Text('Applications'),
-                    )
-                  ],
-                ),
-              ),
-            ],
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              // maxCrossAxisExtent: 300,
-              crossAxisCount: 2,
-              childAspectRatio: 6 / 6,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
             ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => AdminProductsScreen()));
+              },
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(13),
+                        color: Colors.white,
+                      ),
+                      child: const Center(
+                        child: Image(image: AssetImage('assets/products.png')),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: const Text('Products'),
+                  )
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const AdminMessages('path')));
+              },
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(13),
+                        color: Colors.white,
+                      ),
+                      child: const Center(
+                        child: Image(image: AssetImage('assets/messages.png')),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: const Text('Messages'),
+                  )
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) =>const AdminApplication()));
+              },
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(13),
+                        color: Colors.white,
+                      ),
+                      child: const Center(
+                        child:
+                            Image(image: AssetImage('assets/applications.png')),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: const Text('Applications'),
+                  )
+                ],
+              ),
+            ),
+          ],
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            // maxCrossAxisExtent: 300,
+            crossAxisCount: 2,
+            childAspectRatio: 6 / 6,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
           ),
         ),
       ),
