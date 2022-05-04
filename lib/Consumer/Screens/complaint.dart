@@ -43,6 +43,11 @@ class Compliant extends StatelessWidget {
                         decoration: BoxDecoration(
                           border: Border.all(),
                         ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -64,6 +69,11 @@ class Compliant extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                           border: Border.all(),
+                        ),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                          ),
                         ),
                       ),
                     ),

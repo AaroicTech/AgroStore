@@ -30,7 +30,6 @@ class _SecondDashbordState extends State<SecondDashbord> {
           Container(
             padding: const EdgeInsets.only(left: 15.0),
             child: Row(
-              //  mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 const Icon(
                   Icons.arrow_back_ios,

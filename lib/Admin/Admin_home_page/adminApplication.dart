@@ -9,11 +9,17 @@ class AdminApplication extends StatefulWidget {
   State<AdminApplication> createState() => _AdminApplicationState();
 }
 
+GlobalKey<ScaffoldState> key = GlobalKey();
+
+void showDrawer() {
+  key.currentState!.openDrawer();
+}
+
 class _AdminApplicationState extends State<AdminApplication> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar(onTap: showDrawer),
       body: Column(
         children: [
           Padding(

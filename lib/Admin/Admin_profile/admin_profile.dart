@@ -1,8 +1,10 @@
+import 'package:agro_store/Admin/Admin_drawer/admin_drawer.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
+import 'package:agro_store/Widget/appbar.dart';
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
-  ProfilePage({Key? key}) : super(key: key);
+class AdminProfilePage extends StatelessWidget {
+  AdminProfilePage({Key? key}) : super(key: key);
 
   final name = TextEditingController();
   final email = TextEditingController();
@@ -10,17 +12,27 @@ class ProfilePage extends StatelessWidget {
   final address = TextEditingController();
   final previews = TextEditingController();
 
-  GlobalKey<FormState> formKey = GlobalKey();
+  //GlobalKey<FormState> formKey = GlobalKey();
+
+  // @override
+  // GlobalKey<ScaffoldState> key = GlobalKey();
+
+  // void showDrawer() {
+  //   key.currentState!.openDrawer();
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: key,
+      drawer: const AdminDrawer(),
+      appBar: appBar(),
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.only(top: 10),
           padding: const EdgeInsets.all(20),
           child: Form(
-            key: formKey,
+            // key: formKey,
             child: Center(
               child: Column(
                 children: [
