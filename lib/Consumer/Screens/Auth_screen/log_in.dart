@@ -1,4 +1,5 @@
 import 'package:agro_store/Admin/Admin_auth/admin_sign_up.dart';
+import 'package:agro_store/Admin/Admin_home_page/admin_home_page.dart';
 import 'package:agro_store/Consumer/Screens/Auth_screen/create_account.dart';
 import 'package:agro_store/Consumer/Screens/main_activity.dart';
 import 'package:agro_store/Stlyes/colors.dart';
@@ -136,8 +137,10 @@ class _LogInPageState extends State<LogInPage> {
                     onTap: () {
                       setState(() {
                         if (dropdownValue == 'Admin') {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => AdminSignUP()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const AdminHomePage()));
                         } else if (dropdownValue == 'Consumer') {
                           Navigator.push(
                               context,
