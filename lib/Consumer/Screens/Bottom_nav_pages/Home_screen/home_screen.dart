@@ -24,13 +24,10 @@ class _HomePageState extends State<HomePage> {
                   width: 360,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
+                      image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/Frame 33575.png')),
                       border: Border.all()),
-                  child: Container(
-                    child: Image.asset(
-                      'assets/Frame 33575.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
                 ),
                 const SizedBox(height: 10),
                 Container(

@@ -1,7 +1,10 @@
+import 'package:agro_store/Consumer/Screens/Auth_screen/sign_up.dart';
+import 'package:agro_store/Consumer/Screens/application.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:agro_store/Widget/appbar.dart';
 import 'package:agro_store/Widget/drawer.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProductsDetail extends StatefulWidget {
@@ -53,7 +56,9 @@ class _ProductsDetailState extends State<ProductsDetail> {
                 padding: const EdgeInsets.only(left: 260),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                    // Navigator.pop(context);
+                    Navigator.push(context,
+                        CupertinoPageRoute(builder: ((context) => ApplicationPage())));
                   },
                   child: Container(
                     height: 40,

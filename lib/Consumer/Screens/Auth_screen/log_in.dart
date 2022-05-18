@@ -12,7 +12,7 @@ class LogInPage extends StatefulWidget {
   State<LogInPage> createState() => _LogInPageState();
 }
 
-String dropdownValue = 'Selecte Domain';
+String dropdownValue = 'Select Domain';
 final _email = TextEditingController();
 final _pwd = TextEditingController();
 
@@ -33,19 +33,18 @@ class _LogInPageState extends State<LogInPage> {
                 children: [
                   Text('Welcome to', style: textStyle),
                   const SizedBox(height: 10),
-                  Container(
-                    child: const Image(
+                  const SizedBox(
+                    child: Image(
                       image: AssetImage('assets/agro_store.png'),
                     ),
                   ),
                   const SizedBox(height: 40),
                   Container(
                     padding: const EdgeInsets.all(10),
-                    height: 40,
+                    height: 50,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(),
+                      border: Border.all(color: Colors.grey),
                     ),
                     child: Container(
                       child: DropdownButton<String>(
@@ -60,7 +59,7 @@ class _LogInPageState extends State<LogInPage> {
                             dropdownValue = newValue!;
                           });
                         },
-                        items: <String>['Selecte Domain', 'Admin', 'Consumer']
+                        items: <String>['Select Domain', 'Admin', 'Consumer']
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
@@ -83,7 +82,7 @@ class _LogInPageState extends State<LogInPage> {
                       Container(
                         child: TextFormField(
                           decoration: const InputDecoration(
-                            border: InputBorder.none,
+                            border: OutlineInputBorder(),
                           ),
                           controller: _email,
                           validator: (value) {
@@ -106,7 +105,7 @@ class _LogInPageState extends State<LogInPage> {
                       Container(
                         child: TextFormField(
                           decoration: const InputDecoration(
-                            border: InputBorder.none,
+                            border: OutlineInputBorder(),
                           ),
                           controller: _pwd,
                           validator: (value) {
@@ -137,11 +136,9 @@ class _LogInPageState extends State<LogInPage> {
                     onTap: () {
                       setState(() {
                         if (dropdownValue == 'Admin') {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) =>  AdminSignUP()));
-                        }else if (dropdownValue == 'Consumer') {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) => AdminSignUP()));
+                        } else if (dropdownValue == 'Consumer') {
                           Navigator.push(
                               context,
                               MaterialPageRoute(

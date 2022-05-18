@@ -1,23 +1,34 @@
+import 'dart:io';
+
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
+import 'package:agro_store/Utils/file_picker_utils.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import '../../Widget/appbar.dart';
 import '../../Widget/drawer.dart';
 
-class Application extends StatelessWidget {
-  Application({Key? key}) : super(key: key);
+class ApplicationPage extends StatefulWidget {
+  ApplicationPage({Key? key}) : super(key: key);
 
   @override
-  GlobalKey<ScaffoldState> key = GlobalKey();
+  State<ApplicationPage> createState() => _ApplicationPageState();
+}
+
+class _ApplicationPageState extends State<ApplicationPage> {
+  @override
+  GlobalKey<ScaffoldState> _key = GlobalKey();
 
   void showDrawer() {
-    key.currentState!.openDrawer();
+    _key.currentState!.openDrawer();
   }
+
+  String imagePath = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: key,
+      key: _key,
       drawer: const MainDrawer(),
       appBar: appBar(onTap: showDrawer),
       body: SingleChildScrollView(
@@ -37,14 +48,83 @@ class Application extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Container(
-                      child: Container(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        'Upload image of valid ID',
+                        style: textStyle0,
+                      ),
+                    ),
+                    imagePath == ''
+                        ? Container(
+                            height: 100,
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: grey),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: GestureDetector(
+                              onTap: () {
+                                pickProfileImage(type: FileType.image)
+                                    .then((value) {
+                                  setState(() {
+                                    imagePath = value;
+                                  });
+                                });
+                              },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor: grey,
+                                    child: Icon(
+                                      Icons.add,
+                                      color: white,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    'Tap to Upload image',
+                                    style: textStyle0,
+                                  )
+                                ],
+                              ),
+                            ),
+                          )
+                        : GestureDetector(
+                            onTap: () {
+                              pickProfileImage(type: FileType.image)
+                                  .then((value) {
+                                setState(() {
+                                  imagePath = value;
+                                });
+                              });
+                            },
+                            child: Container(
+                              height: 100,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: grey),
+                                  borderRadius: BorderRadius.circular(5),
+                                  image: DecorationImage(
+                                      image: FileImage(File(imagePath)))),
+                            ),
+                          ),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -59,11 +139,9 @@ class Application extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Container(
-                      child: Container(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -81,11 +159,9 @@ class Application extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Container(
-                      child: Container(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -103,11 +179,9 @@ class Application extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Container(
-                      child: Container(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -125,11 +199,9 @@ class Application extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Container(
-                      child: Container(
-                        height: 80,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -147,11 +219,9 @@ class Application extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Container(
-                      child: Container(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),
@@ -169,11 +239,9 @@ class Application extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Container(
-                      child: Container(
-                        height: 100,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                         ),
                       ),
                     ),

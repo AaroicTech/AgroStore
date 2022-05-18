@@ -1,3 +1,4 @@
+import 'package:agro_store/Consumer/Screens/main_activity.dart';
 import 'package:agro_store/Stlyes/colors.dart';
 import 'package:agro_store/Stlyes/fonts.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class CreateAccount extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text('Create Account', style: textStyle),
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
                 Column(
                   children: [
                     Container(
@@ -37,7 +38,9 @@ class CreateAccount extends StatelessWidget {
                     ),
                     Container(
                       child: TextFormField(
-                        decoration: const InputDecoration(),
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
                       ),
                     ),
                   ],
@@ -51,7 +54,9 @@ class CreateAccount extends StatelessWidget {
                     ),
                     Container(
                       child: TextFormField(
-                        decoration: const InputDecoration(),
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
                       ),
                     ),
                   ],
@@ -65,7 +70,9 @@ class CreateAccount extends StatelessWidget {
                     ),
                     Container(
                       child: TextFormField(
-                        decoration: const InputDecoration(),
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
                       ),
                     ),
                   ],
@@ -80,12 +87,13 @@ class CreateAccount extends StatelessWidget {
                     const SizedBox(height: 15),
                     Container(
                       height: 90,
-                      decoration: BoxDecoration(border: Border.all()),
                       child: Container(
-                          // child: TextFormField(
-                          //   decoration: const InputDecoration(),
-                          // ),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
                           ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -99,12 +107,13 @@ class CreateAccount extends StatelessWidget {
                     const SizedBox(height: 10),
                     Container(
                       height: 40,
-                      decoration: BoxDecoration(border: Border.all()),
                       child: Container(
-                          // child: TextFormField(
-                          //   decoration: const InputDecoration(),
-                          // ),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
                           ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -114,13 +123,13 @@ class CreateAccount extends StatelessWidget {
                   children: [
                     TextButton(
                       onPressed: () {},
-                      child: Text('Next', style: textStyle0),
+                      child: Text('Sign Up', style: textStyle0),
                     ),
                     const SizedBox(width: 10),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => SignUp()));
+                            MaterialPageRoute(builder: (_) => MainActivity()));
                       },
                       child: Container(
                         height: 35,
